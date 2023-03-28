@@ -30,7 +30,7 @@ const scrape = async (browser, url) => {
   );
 
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     waitForInitialPage: true,
   });
 
