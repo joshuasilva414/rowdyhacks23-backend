@@ -31,6 +31,7 @@ const scrape = async (browser, url) => {
 
   const browser = await puppeteer.launch({
     headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
     waitForInitialPage: true,
   });
 
