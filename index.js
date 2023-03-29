@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import puppeteer from "puppeteer-extra";
 import AdblockerPlugin from "puppeteer-extra-plugin-adblocker";
 import * as adblocker from "puppeteer-extra-plugin-adblocker";
@@ -34,6 +35,8 @@ const scrape = async (browser, url) => {
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
     waitForInitialPage: true,
   });
+
+  app.use(cors());
 
   app.get("/", (req, res) => {
     res.send("Nothin' here bro");
