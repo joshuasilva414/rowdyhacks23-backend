@@ -48,7 +48,7 @@ const scrape = async (browser, url) => {
 
     try {
       const text = await scrape(browser, url);
-      res.send(text);
+      res.status(200).json({ text });
     } catch (err) {
       console.log(err);
       res.status(404).json({
