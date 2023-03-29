@@ -36,7 +36,7 @@ const scrape = async (browser, url) => {
     waitForInitialPage: true,
   });
 
-  app.use(cors({ origin: ["https://localhost:3000"] }));
+  app.use(cors());
 
   app.get("/", (req, res) => {
     res.send("Nothin' here bro");
